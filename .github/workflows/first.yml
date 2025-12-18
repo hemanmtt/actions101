@@ -9,6 +9,9 @@ jobs:
         - name: Welcome message
           run: echo "Fist GitHub Action Job"
 
+        - name: Checkout
+          uses: uses: actions/checkout@v6
+
         - name: List files
           run: ls
 

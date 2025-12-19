@@ -10,9 +10,9 @@ jobs:
               uses: actions/checkout@v6
 
             - name: Install Cowsay program
-              run: sudo apt-get install cosway -y
+              run: sudo apt-get install cowsay -y
 
-            - name: Run Cosway Command
+            - name: Run Cowsay Command
               run: cowsay -f cow "I am a COW. MOW MOW" >> cow.txt
 
             - name: Check file

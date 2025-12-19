@@ -1,0 +1,28 @@
+name: ASCII Artwok
+
+on: push
+
+jobs:
+    ascii-job:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v6
+
+            - name: Install Cowsay program
+              run: sudo apt-get install cosway -y
+
+            - name: Run Cosway Command
+              run: cowsay -f cow "I am a COW. MOW MOW" >> cow.txt
+
+            - name: Check file
+              run: grep -i "cow" cow.txt
+
+            - name: Read file
+              run: cat cow.txt
+            
+            - name: Checkout repo
+              run: ls -ltra
+            
+
+

@@ -16,7 +16,7 @@ jobs:
             cat README.md
 
         - name: ASCII
-          run: cosway -f dog "WOF WOF" >> dog.txt
+          run: cowsay -f dog "WOF WOF" >> dog.txt
             
       #  - name: List files
       #   run: ls

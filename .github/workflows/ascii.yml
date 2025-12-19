@@ -13,16 +13,16 @@ jobs:
               run: sudo apt-get install cowsay -y
 
             - name: Run Cowsay Command
-              run: cowsay -f cow "I am a COW. MOW MOW" >> cow.txt
+              run: cowsay -f dog "I am a Dog, WOF WOF!!!"
 
-            - name: Check file
-              run: grep -i "cow" cow.txt
-
-            - name: Read file
-              run: cat cow.txt
+        #    - name: Check file
+        #     run: grep -i "cow" cow.txt
+ 
+        #    - name: Read file
+        #      run: cat cow.txt
             
-            - name: Checkout repo
-              run: ls -ltra
+        #    - name: Checkout repo
+        #      run: ls -ltra
             
 
 

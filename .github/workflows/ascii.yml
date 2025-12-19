@@ -11,18 +11,24 @@ jobs:
 
             - name: Install Cowsay program
               run: sudo apt-get install cowsay -y
-
-            - name: Run Cowsay Command
-              run: cowsay -f dragon "I am a Dragon, FIRE!!!!!!" >> dragon.txt
-
-            - name: Check file
-              run: grep -i "dragon" dragon.txt
- 
-            - name: Read file
-              run: cat dragon.txt
             
-            - name: Checkout repo
+            - name: List repo files
               run: ls -ltra
+
+            - name: Running Shell Script
+              run: ./myscript.sh
+            
+            #- name: Run Cowsay Command
+            #  run: cowsay -f dragon "I am a Dragon, FIRE!!!!!!" >> dragon.txt
+
+            #- name: Check file
+            #  run: grep -i "dragon" dragon.txt
+ 
+            #- name: Read file
+            #  run: cat dragon.txt
+            
+            #- name: Checkout repo
+            #  run: ls -ltra
             
 
 

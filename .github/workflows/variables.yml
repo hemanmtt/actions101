@@ -15,7 +15,7 @@ jobs:
       run: echo docker build docker.io/beheman77/mynginx-heman:v1
   
     - name: Docker login
-      run: docker login --username=beheman77 --password=securepassword123
+      run: echo docker login --username=beheman77 --password=securepassword123
 
   deploy1:
     needs: docker1

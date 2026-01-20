@@ -3,18 +3,30 @@ name: Matrix Config
 on: workflow_dispatch
 
 jobs:
-    deploy-on-ubunutu:
-        runs-on: ubunutu-latest
-        steps:
-        - name: Echo Docker details
-          run: docker info
-        - name: Run Images
-          run: docker run hello-world
+    # deploy-on-ubunutu:
+    #     runs-on: ubunutu-latest
+    #     steps:
+    #     - name: Echo Docker details
+    #       run: docker info
+    #     - name: Run Images
+    #       run: docker run hello-world
     
-    deploy-on-windows:
-        runs-on: windows-latest
+    # deploy-on-windows:
+    #     runs-on: windows-latest
+    #     steps:
+    #     - name: Echo Docker details
+    #       run: docker info
+    #     - name: Run Images
+    #       run: docker run hello-world
+
+    deploy:
+        strategy:
+            matrix:
+                OS: [ubuntu-latest, windows-latest]
+                images: [hello-world, alpine]
+        runs-on: ${{ matrix.OS}}
         steps:
-        - name: Echo Docker details
+        - name: Echo docker
           run: docker info
-        - name: Run Images
-          run: docker run hello-world
+        - name: RUn Images on ${{ matrix.OS}}
+          run: ${{ matrix.images}}

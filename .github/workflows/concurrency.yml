@@ -9,7 +9,7 @@ env:
 
 jobs:
   ##Variables at Step Level ###
-  docker2:
+  docker:
     runs-on: ubuntu-latest
     steps:
     - name: Docker build
@@ -20,9 +20,12 @@ jobs:
         DOCKER_PASSWORD: securepassword123
       run: echo docker login --username=$DOCKER_USERNAME --password=$DOCKER_PASSWORD
 
-  deploy2:
+  deploy:
     runs-on: ubuntu-latest
-    needs: docker2
+    needs: docker
+    concurrency:
+        group: prod-deployment
+        cancel-in-progress: true
     steps:
     - name: Docker run
       run: |

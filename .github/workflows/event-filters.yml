@@ -1,0 +1,26 @@
+name: workflow activity and filters
+
+on:
+  workflow_dispatch:
+  push:
+    branches: 
+      - main
+      - '!feature/*'
+    branches-ignore:
+      - 'test/**'
+  pull_request: 
+    types: 
+      - opened
+    branches: 
+      - main
+    paths-ignore: 
+      - README.md
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Hello World
+      - run: echo "Hello World!!!"
+
+  
